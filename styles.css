@@ -28,9 +28,10 @@ input {
 }
 
 .slider {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -39,7 +40,7 @@ input {
 .slider-slides {
   width: 100%;
   display: flex;
-  transition: 1s;
+  transition: 0.6s;
 }
 
 .slides {
@@ -48,8 +49,7 @@ input {
   height: 70vh;
   flex-shrink: 0;
   border: 0.2em solid #000000;
-  border-radius: 5%;
-  transition: 1.5s;
+  transition: 0.6s;
 }
 
 .slide1 {
@@ -91,7 +91,7 @@ input {
 
 .slider-text {
   display: flex;
-  width: 70%;
+  width: 60%;
   overflow-x: hidden;
   padding-left: 1vw;
 }
@@ -108,6 +108,7 @@ input {
   flex-shrink: 0;
   padding-top: 1vh;
   font-size: 1.5em;
+  padding: 0 0.2em; 
 }
 
 #slide2:checked ~ .slider .text-wrapper {
@@ -125,36 +126,32 @@ input {
 }
 
 .controls {
-  position: relative;
   display: flex;
-  justify-content: center;
-  gap: 10%;
-  width: 15%;
-  height: 10vh;
-  margin-left: auto;
-  margin-right: 5%;
+  justify-content: space-between;
+  width: 8em;
+  margin-right: 2%;
 }
 
 label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6vh;
-  height: 6vh;
+  width: 2em;
+  height: 2em;
   cursor: pointer;
 }
 
 .label-inner {
   width: 1em;
   height: 1em;
-  border: 0.1vh solid aqua;
+  border: 0.1em solid aqua;
   border-radius: 50%;
-  transition: 1s;
+  transition: 0.6s;
 }
 
 label:hover .label-inner {
-  border: 0.5vh solid aqua;
-  box-shadow: 1vh 1vh 1vh;
+  border: 0.2em solid aqua;
+  box-shadow: 0.2em 0.2em 0.2em;
 }
 
 #slide1:checked ~ .slider .controls .label1 .label-inner,
@@ -162,4 +159,40 @@ label:hover .label-inner {
 #slide3:checked ~ .slider .controls .label3 .label-inner,
 #slide4:checked ~ .slider .controls .label4 .label-inner {
   background-color: aqua;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    width: 6em;
+  }
+  .text {
+    font-size: 1em;
+  }
+  label {
+    width: 3vh;
+    height: 3vh;
+  }
+  .label-inner {
+    width: 0.8em;
+    height: 0.8em;
+  }
+}
+
+@media (max-width: 420px) {
+  .slider {
+    flex-direction: column;
+    align-items: center;
+  }
+  .controls {
+    order: 1;
+    margin: 0.4em 0;
+    height: auto;
+  }
+  .slider-text {
+    order: 2;
+    align-self: start;
+  }
+  .slides {
+    height: 60vh;
+  }
 }
