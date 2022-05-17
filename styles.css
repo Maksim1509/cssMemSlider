@@ -155,16 +155,7 @@ label:active .label-inner {
 #slide4:checked ~ .slider .controls .label4 .label-inner {
   background-color: transparent;
   border-color: aqua;
-  cursor: auto;
-  box-shadow: none;
 }
-#slide1:checked ~ .slider .controls .label1,
-#slide2:checked ~ .slider .controls .label2,
-#slide3:checked ~ .slider .controls .label3,
-#slide4:checked ~ .slider .controls .label4 {
-  cursor: auto;
-}
-
 
 @media (max-width: 768px) {
   .controls {
